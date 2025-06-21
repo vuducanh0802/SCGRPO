@@ -676,7 +676,7 @@ class DRGRPOTrainer(Trainer):
 
             if  self.extractor_name=='nomic':
                 embeddings = self.sentence_extractor.encode(completions_flat,max_tokens_per_text=3584,device=device)
-            else self.extractor_name=='jina':
+            elif self.extractor_name=='jina':
                 embeddings = self.sentence_extractor.encode(completions_flat,max_length=3584,device=device)
             else:
                 raise NotImplementedError("Embedding model is not implemented.")
