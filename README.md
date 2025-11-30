@@ -5,10 +5,14 @@ Kinda mess setting up the environment, pray while you do it.
 
 something that I did:
 
+- Since HuggingFace ≥4.41 changed Trainer API. It now always passes the dataset into _get_train_sampler(some_dataset).
 In SCGRPO/src/open_r1/trl/trainer/grpo_trainer.py
 ```
-def _get_train_sampler(self) -> Sampler: -> def _get_train_sampler(self, dataset=None) -> Sampler: since HuggingFace ≥4.41 changed Trainer API. It now always passes the dataset into _get_train_sampler(some_dataset).
+def _get_train_sampler(self) -> Sampler: -> def _get_train_sampler(self, dataset=None) -> Sampler: 
 ```
+- modified /recipes/dra_grpo.yaml: attn_implementation, num_generations, per_device_eval_batch_size, per_device_train_batch_size
+
+
 Clone the code. We are using the following modulses.
 
 ```
