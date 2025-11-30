@@ -9,7 +9,7 @@ In SCGRPO/src/open_r1/trl/trainer/grpo_trainer.py
 ```
 def _get_train_sampler(self) -> Sampler: -> def _get_train_sampler(self, dataset=None) -> Sampler: since HuggingFace ≥4.41 changed Trainer API. It now always passes the dataset into _get_train_sampler(some_dataset).
 ```
-Clone the code. We are using the following modules.
+Clone the code. We are using the following modulses.
 
 ```
 module load anaconda3/2023.09-0 
